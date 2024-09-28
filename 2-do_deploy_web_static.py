@@ -18,12 +18,12 @@ def do_deploy(archive_path):
         # Upload archive
         put(archive_path, '/tmp/')
 
-        # Create target dir
+        # Create target directory
         timestamp = archive_path[-18:-4]
         run('sudo mkdir -p /data/web_static/releases/web_static_{}/'
             .format(timestamp))
 
-        # Uncompress archive and delete .tgz
+        # Uncompress archive and delete .tgz folder
         run('sudo tar -xzf /tmp/web_static_{}.tgz -C '
             '/data/web_static/releases/web_static_{}/'
             .format(timestamp, timestamp))
