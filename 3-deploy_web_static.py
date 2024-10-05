@@ -11,6 +11,7 @@ from datetime import datetime
 from os.path import exists, isdir
 env.hosts = ['34.226.191.215', '34.235.167.216']
 
+
 def do_pack():
     """generates a tgz archive"""
     try:
@@ -51,3 +52,4 @@ def deploy():
     if archive_path is None:
         return False
     return do_deploy(archive_path)
+    
